@@ -1,7 +1,8 @@
-#Write a Python program that matches a string that has an 'a' followed by anything, ending in 'b'.
+#Write a Python program to find the sequences of one upper case letter followed by lower case letters.
 import re
-def r(text):
-    return re.sub('[ ,.]', ':', text)
+def find(text):
+    pattern = re.compile(r"a.+b\Z")
+    return True if re.search(pattern, text) else False
 
 text = input()
-print(r(text))
+print(find(text))
